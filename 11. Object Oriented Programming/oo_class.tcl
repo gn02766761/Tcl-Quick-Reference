@@ -1,4 +1,9 @@
-#oo::class - define a class
+# ┌───────────────────────────────────────────┐
+# │  oo::class — define a class               │
+# │  Section 11: Object Oriented Programming  │
+# └───────────────────────────────────────────┘
+
+# ── Class Definition ────────────────────────
 
 oo::class create Person {
     variable name age
@@ -17,11 +22,14 @@ oo::class create Person {
     }
 }
 
+# 💡 variable declares instance fields; they are
+#    automatically scoped to each object instance.
+
+# ── Create & Use an Object ──────────────────
+
 # Create object
 set person [Person new "Alice" 30]
 
-puts "Name: [$person getName]"
-#Name: Alice
+puts "Name: [$person getName]"                             ;# → Name: Alice
 
-puts "Age: [$person getAge]"
-#Age: 30
+puts "Age: [$person getAge]"                               ;# → Age: 30

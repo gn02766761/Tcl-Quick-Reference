@@ -1,4 +1,9 @@
-#namespace - create and manage namespaces
+# ┌───────────────────────────────────────────┐
+# │  namespace — create and manage namespaces │
+# │  Section 10: Namespaces                   │
+# └───────────────────────────────────────────┘
+
+# ── Define a Namespace ──────────────────────
 
 namespace eval myNS {
     variable myVar "inside namespace"
@@ -7,16 +12,19 @@ namespace eval myNS {
     }
 }
 
-puts $myNS::myVar
-#inside namespace
+# ── Access Namespace Members ────────────────
 
-myNS::myProc
-#Hello from namespace
+puts $myNS::myVar                                          ;# → inside namespace
+
+myNS::myProc                                               ;# → Hello from namespace
+
+# 💡 Use :: as the scope resolution operator to reach
+#    into any namespace — like C++ or Python's dot.
+
+# ── Introspection ───────────────────────────
 
 # Current namespace
-puts "Current: [namespace current]"
-#Current: ::
+puts "Current: [namespace current]"                        ;# → Current: ::
 
 # List namespaces
-puts "Namespaces: [namespace children]"
-#Namespaces: ::myNS
+puts "Namespaces: [namespace children]"                    ;# → Namespaces: ::myNS

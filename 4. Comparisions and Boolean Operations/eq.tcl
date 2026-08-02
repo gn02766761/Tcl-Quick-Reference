@@ -1,12 +1,20 @@
-#eq - check if two strings are equal
+# ┌───────────────────────────────────────────┐
+# │  eq — String Equality                     │
+# │  Section 4: Comparisons & Boolean Ops     │
+# └───────────────────────────────────────────┘
+#
+# Compares two values as STRINGS for exact equality.
+# Case-sensitive: "Hello" eq "hello" → 0
+
+# ── Setup ───────────────────────────────────
 
 set a "hello"
 set b "hello"
 
-puts [expr {$a eq $b}]
-#1
+# ── Basic Usage ─────────────────────────────
 
-puts [expr {$a eq "world"}]
-#0
+puts [expr {$a eq $b}]       ;# → 1  (identical strings)
+puts [expr {$a eq "world"}]  ;# → 0  (different strings)
 
-# Note: eq is for exact string equality, case sensitive
+# 💡 Tip: Use eq for string comparison, == for numeric.
+#    eq avoids surprises like "01" == 1 being true!

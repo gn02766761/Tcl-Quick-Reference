@@ -1,13 +1,21 @@
-#set - return the value of a variable
+# ┌───────────────────────────────────────────┐
+# │  set — return the value of a variable     │
+# │  Section 1: Import                        │
+# └───────────────────────────────────────────┘
 
-set man Victor
-#Victor
+# ── Basic Usage ─────────────────────────────
 
-puts [set man]
-#Victor
+set man Victor ;# → Victor
 
-puts $man
-#Victor
+puts [set man] ;# → Victor
 
-set fool
-#cannot read "fool": no such variable
+puts $man ;# → Victor
+
+# ── Error Handling ──────────────────────────
+
+# Reading an undefined variable raises an error:
+if {[catch {set fool} err]} {
+    puts "Error: $err" ;# → Error: can't read "fool": no such variable
+}
+
+# 💡 Tip: `set` with one arg reads; with two args it assigns AND returns the value.
